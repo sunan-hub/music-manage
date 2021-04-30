@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SongAudio from './components/SongAudio';
+import SongAudio from './components/SongAudio'
 export default {
   name: 'App',
   components: {
@@ -15,5 +15,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
