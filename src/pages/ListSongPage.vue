@@ -1,6 +1,6 @@
 <template>
   <div class="table">
-    <div class="crumbs"><i class="el-icon-tickets"></i>歌单歌曲信息</div>
+    <div class="crumbs"><i class="el-icon-tickets"></i>歌单</div>
     <div class="container">
       <div class="handle-box">
         <el-button type="primary" size="mini" @click="delAll"
@@ -179,9 +179,12 @@ export default {
         .then(res => {
           if (res.code === 1) {
             this.getData()
-            this.notify('添加成功', 'success')
+            this.$message({
+              message: '添加成功',
+              type: 'success'
+            })
           } else {
-            this.notify('添加失败', 'error')
+            this.$message.error('添加失败')
           }
         })
         .catch(err => {
@@ -195,9 +198,12 @@ export default {
         .then(res => {
           if (res) {
             this.getData()
-            this.notify('删除成功', 'success')
+            this.$message({
+              message: '删除成功',
+              type: 'success'
+            })
           } else {
-            this.notify('删除失败', 'error')
+            this.$message.error('删除失败')
           }
         })
         .catch(err => {

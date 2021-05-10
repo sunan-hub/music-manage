@@ -1,9 +1,8 @@
 <template>
   <div class="table">
-    <div class="crumbs"><i class="el-icon-tickets"></i>收藏信息</div>
     <div class="container">
       <div class="handle-box">
-        <el-button type="primary" size="mini" @click="delAll"
+        <el-button type="success" plain size="mini" @click="delAll"
           >批量删除</el-button
         >
         <el-input
@@ -31,9 +30,12 @@
       ></el-table-column>
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" type="danger" @click="handleDelete(scope.row)"
-            >删除</el-button
-          >
+          <el-button
+            type="danger"
+            icon="el-icon-delete"
+            @click="handleDelete(scope.row.id)"
+            circle
+          ></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -115,9 +117,12 @@ export default {
         .then(res => {
           if (res) {
             this.getData()
-            this.notify('删除成功', 'success')
+            this.$message({
+              message: '删除成功',
+              type: 'success'
+            })
           } else {
-            this.notify('删除失败', 'error')
+            this.$message.error('删除失败')
           }
         })
         .catch(err => {

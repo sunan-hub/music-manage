@@ -122,9 +122,12 @@ export default {
         .then(res => {
           if (res) {
             this.getData()
-            this.notify('删除成功', 'success')
+            this.$message({
+              message: '删除成功',
+              type: 'success'
+            })
           } else {
-            this.notify('删除失败', 'error')
+            this.$message.error('删除失败')
           }
         })
         .catch(err => {

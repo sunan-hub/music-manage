@@ -29,7 +29,7 @@ a {
   overflow-y: scroll;
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
-  background: #f0f0f0;
+  background: #078578;
 }
 
 .content {
@@ -43,9 +43,41 @@ a {
 
 .container {
   padding: 20px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: rgba(25, 143, 131, 0.1);
   border-radius: 5px;
+}
+
+.el-table {
+  background: url(../img/background.jpg);
+}
+
+.is-scrolling-none .el-table__body .el-table__row,
+.el-table th,
+.el-table tr,
+.el-table .el-table__header-wrapper .el-table__header,
+.el-table .el-table__header-wrapper,
+.el-table .el-table__header .has-gutter,
+.el-table .el-table__header .has-gutter .is-leaf {
+  background-color: transparent;
+  color: #fff;
+}
+
+.el-table__body tr:hover > td,.el-table .el-table__header:hover .has-gutter .is-leaf {
+  background-color: green !important;
+  color: #fff;
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color:  green;;
+  border-color: teal;
+}
+
+.el-pagination__total {
+  color: #fff;
+}
+
+.is-scrolling-none .el-table__body .el-table__row .cell {
+  color: #fff;
 }
 
 .crumbs {

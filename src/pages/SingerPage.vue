@@ -2,7 +2,7 @@
   <div class="table">
     <div class="container">
       <div class="handle-box">
-        <el-button type="primary" size="mini" @click="delAll"
+        <el-button type="success" plain size="mini" @click="delAll"
           >批量删除</el-button
         >
         <el-input
@@ -12,7 +12,7 @@
           class="handle-input"
         ></el-input>
         <el-button
-          type="primary"
+          type="success"
           size="mini"
           @click="centerDialogVisible = true"
           >添加歌手</el-button
@@ -39,7 +39,7 @@
             :before-upload="beforeAvatorUpload"
             :on-success="handleAvatorSuccess"
           >
-            <el-button size="mini">更新图片</el-button>
+            <el-button size="mini" type="success" plain>更新图片</el-button>
           </el-upload>
         </template>
       </el-table-column>
@@ -74,20 +74,15 @@
       </el-table-column>
       <el-table-column label="歌曲管理" width="110" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" @click="songEdit(scope.row.id, scope.row.name)"
+          <el-button size="mini" type="success" plain @click="songEdit(scope.row.id, scope.row.name)"
             >歌曲管理</el-button
           >
         </template>
       </el-table-column>
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" @click="handleEdit(scope.row)">编辑</el-button>
-          <el-button
-            size="mini"
-            type="danger"
-            @click="handleDelete(scope.row.id)"
-            >删除</el-button
-          >
+          <el-button type="success" icon="el-icon-edit" @click="handleEdit(scope.row)" plain circle></el-button>
+          <el-button type="danger" icon="el-icon-delete"  @click="handleDelete(scope.row.id)" plain circle></el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -299,9 +294,12 @@ export default {
         .then(res => {
           if (res.code === 1) {
             this.getData()
-            this.notify('添加成功', 'success')
+            this.$message({
+              message: '添加成功',
+              type: 'success'
+            })
           } else {
-            this.notify('添加失败', 'error')
+            this.$message.error('添加失败')
           }
         })
         .catch(err => {
@@ -338,9 +336,12 @@ export default {
         .then(res => {
           if (res.code === 1) {
             this.getData()
-            this.notify('修改成功', 'success')
+            this.$message({
+              message: '修改成功',
+              type: 'success'
+            })
           } else {
-            this.notify('修改失败', 'error')
+            this.$message.error('修改失败')
           }
         })
         .catch(err => {
@@ -358,9 +359,12 @@ export default {
         .then(res => {
           if (res) {
             this.getData()
-            this.notify('删除成功', 'success')
+            this.$message({
+              message: '删除成功',
+              type: 'success'
+            })
           } else {
-            this.notify('删除失败', 'error')
+            this.$message.error('删除失败')
           }
         })
         .catch(err => {

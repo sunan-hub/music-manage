@@ -92,43 +92,43 @@ export default {
       chartData: {
         columns: ['name', '用户数'],
         rows: [
-          { name: '海南', 用户数: 2 },
-          { name: '广东', 用户数: 2 },
-          { name: '广西', 用户数: 2 },
-          { name: '福建', 用户数: 2 },
-          { name: '湖南', 用户数: 2 },
-          { name: '湖北', 用户数: 2 },
-          { name: '湖北', 用户数: 2 },
-          { name: '安徽', 用户数: 2 },
-          { name: '北京', 用户数: 2 },
-          { name: '天津', 用户数: 2 },
-          { name: '河南', 用户数: 2 },
-          { name: '河北', 用户数: 2 },
-          { name: '辽宁', 用户数: 2 },
-          { name: '江西', 用户数: 2 },
-          { name: '浙江', 用户数: 2 },
-          { name: '山东', 用户数: 2 },
-          { name: '黑龙江', 用户数: 2 },
-          { name: '西藏', 用户数: 2 },
-          { name: '四川', 用户数: 2 },
-          { name: '重庆', 用户数: 2 },
-          { name: '上海', 用户数: 2 },
-          { name: '江苏', 用户数: 2 },
-          { name: '贵州', 用户数: 2 },
-          { name: '云南', 用户数: 2 },
+          { name: '海南', 用户数: 0 },
+          { name: '广东', 用户数: 0 },
+          { name: '广西', 用户数: 0 },
+          { name: '福建', 用户数: 0 },
+          { name: '湖南', 用户数: 0 },
+          { name: '湖北', 用户数: 0 },
+          { name: '湖北', 用户数: 0 },
+          { name: '安徽', 用户数: 0 },
+          { name: '北京', 用户数: 0 },
+          { name: '天津', 用户数: 0 },
+          { name: '河南', 用户数: 0 },
+          { name: '河北', 用户数: 0 },
+          { name: '辽宁', 用户数: 0 },
+          { name: '江西', 用户数: 0 },
+          { name: '浙江', 用户数: 0 },
+          { name: '山东', 用户数: 0 },
+          { name: '黑龙江', 用户数: 0 },
+          { name: '西藏', 用户数: 0 },
+          { name: '四川', 用户数: 0 },
+          { name: '重庆', 用户数: 0 },
+          { name: '上海', 用户数: 0 },
+          { name: '江苏', 用户数: 0 },
+          { name: '贵州', 用户数: 0 },
+          { name: '云南', 用户数: 0 },
           { name: '台湾', 用户数: 0 },
-          { name: '山西', 用户数: 2 },
-          { name: '陕西', 用户数: 2 },
-          { name: '青海', 用户数: 2 },
-          { name: '甘肃', 用户数: 2 },
-          { name: '吉林', 用户数: 2 },
-          { name: '陕西', 用户数: 2 },
-          { name: '内蒙古', 用户数: 2 },
-          { name: '新疆', 用户数: 20 },
-          { name: '宁夏', 用户数: 2 },
-          { name: '澳门', 用户数: 2 },
-          { name: '香港', 用户数: 2 },
-          { name: '南海诸岛', 用户数: 20 }
+          { name: '山西', 用户数: 0 },
+          { name: '陕西', 用户数: 0 },
+          { name: '青海', 用户数: 0 },
+          { name: '甘肃', 用户数: 0 },
+          { name: '吉林', 用户数: 0 },
+          { name: '陕西', 用户数: 0 },
+          { name: '内蒙古', 用户数: 0 },
+          { name: '新疆', 用户数: 0 },
+          { name: '宁夏', 用户数: 0 },
+          { name: '澳门', 用户数: 0 },
+          { name: '香港', 用户数: 0 },
+          { name: '南海诸岛', 用户数: 0 }
         ]
       },
       // chartSettings: {
@@ -213,65 +213,66 @@ export default {
       songCount: 0, // 歌曲总数
       singerCount: 0, // 歌手数量
       songListCount: 0, // 歌单数量
-      consumer: [], // 所有用户
-      consumerSex: {
-        // 按性别分类的用户数
-        columns: ['性别', '总数'],
-        rows: [
-          { 性别: '男', 总数: 0 },
-          { 性别: '女', 总数: 0 }
-        ]
-      },
-      options: {
-        color: ['#87cefa', '#ffc0cb']
-      },
-      options1: {
-        color: ['yellow']
-      },
-      songStyle: {
-        // 按歌单风格分类
-        columns: ['风格', '总数'],
-        rows: [
-          { 风格: '华语', 总数: 0 },
-          { 风格: '粤语', 总数: 0 },
-          { 风格: '欧美', 总数: 0 },
-          { 风格: '日韩', 总数: 0 },
-          { 风格: 'BGM', 总数: 0 },
-          { 风格: '轻音乐', 总数: 0 },
-          { 风格: '乐器', 总数: 0 }
-        ]
-      },
-      singerSex: {
-        // 按性别分类的歌手数
-        columns: ['性别', '总数'],
-        rows: [
-          { 性别: '女', 总数: 0 },
-          { 性别: '男', 总数: 0 },
-          { 性别: '组合', 总数: 0 },
-          { 性别: '不明', 总数: 0 }
-        ]
-      },
-      country: {
-        columns: ['国籍', '总数'],
-        rows: [
-          { 国籍: '中国', 总数: 0 },
-          { 国籍: '韩国', 总数: 0 },
-          { 国籍: '日本', 总数: 0 },
-          { 国籍: '美国', 总数: 0 },
-          { 国籍: '新加坡', 总数: 0 },
-          { 国籍: '意大利', 总数: 0 },
-          { 国籍: '马来西亚', 总数: 0 },
-          { 国籍: '西班牙', 总数: 0 }
-        ]
-      }
+      consumer: [] // 所有用户
+      // consumerSex: {
+      //   // 按性别分类的用户数
+      //   columns: ['性别', '总数'],
+      //   rows: [
+      //     { 性别: '男', 总数: 0 },
+      //     { 性别: '女', 总数: 0 }
+      //   ]
+      // },
+      // options: {
+      //   color: ['#87cefa', '#ffc0cb']
+      // },
+      // options1: {
+      //   color: ['yellow']
+      // },
+      // songStyle: {
+      //   // 按歌单风格分类
+      //   columns: ['风格', '总数'],
+      //   rows: [
+      //     { 风格: '华语', 总数: 0 },
+      //     { 风格: '粤语', 总数: 0 },
+      //     { 风格: '欧美', 总数: 0 },
+      //     { 风格: '日韩', 总数: 0 },
+      //     { 风格: 'BGM', 总数: 0 },
+      //     { 风格: '轻音乐', 总数: 0 },
+      //     { 风格: '乐器', 总数: 0 }
+      //   ]
+      // },
+      // singerSex: {
+      //   // 按性别分类的歌手数
+      //   columns: ['性别', '总数'],
+      //   rows: [
+      //     { 性别: '女', 总数: 0 },
+      //     { 性别: '男', 总数: 0 },
+      //     { 性别: '组合', 总数: 0 },
+      //     { 性别: '不明', 总数: 0 }
+      //   ]
+      // },
+      // country: {
+      //   columns: ['国籍', '总数'],
+      //   rows: [
+      //     { 国籍: '中国', 总数: 0 },
+      //     { 国籍: '韩国', 总数: 0 },
+      //     { 国籍: '日本', 总数: 0 },
+      //     { 国籍: '美国', 总数: 0 },
+      //     { 国籍: '新加坡', 总数: 0 },
+      //     { 国籍: '意大利', 总数: 0 },
+      //     { 国籍: '马来西亚', 总数: 0 },
+      //     { 国籍: '西班牙', 总数: 0 }
+      //   ]
+      // }
     }
   },
-  created() {},
+  created() {
+  },
   mounted() {
-    this.getConsumer()
     this.getSong()
     this.getSinger()
     this.getSongList()
+    this.getConsumer()
   },
   methods: {
     getConsumer() {
@@ -279,20 +280,23 @@ export default {
       getAllConsumer().then(res => {
         this.consumer = res
         this.consumerCount = res.length
-        this.consumerSex.rows[0]['总数'] = this.setSex(1, this.consumer)
-        this.consumerSex.rows[1]['总数'] = this.setSex(0, this.consumer)
+        for (let item of res) {
+          this.getByLocation(item.location)
+        }
+        // this.consumerSex.rows[0]['总数'] = this.setSex(1, this.consumer)
+        // this.consumerSex.rows[1]['总数'] = this.setSex(0, this.consumer)
       })
     },
-    setSex(sex, val) {
-      // 根据性别获取用户数
-      let count = 0
-      for (let item of val) {
-        if (sex === item.sex) {
-          count++
-        }
-      }
-      return count
-    },
+    // setSex(sex, val) {
+    //   // 根据性别获取用户数
+    //   let count = 0
+    //   for (let item of val) {
+    //     if (sex === item.sex) {
+    //       count++
+    //     }
+    //   }
+    //   return count
+    // },
     getSong() {
       // 歌曲总数
       allSong().then(res => {
@@ -303,13 +307,13 @@ export default {
       // 歌手数量
       getAllSinger().then(res => {
         this.singerCount = res.length
-        this.singerSex.rows[0]['总数'] = this.setSex(0, res)
-        this.singerSex.rows[1]['总数'] = this.setSex(1, res)
-        this.singerSex.rows[2]['总数'] = this.setSex(2, res)
-        this.singerSex.rows[3]['总数'] = this.setSex(3, res)
-        for (let item of res) {
-          this.getByCountry(item.location)
-        }
+        // this.singerSex.rows[0]['总数'] = this.setSex(0, res)
+        // this.singerSex.rows[1]['总数'] = this.setSex(1, res)
+        // this.singerSex.rows[2]['总数'] = this.setSex(2, res)
+        // this.singerSex.rows[3]['总数'] = this.setSex(3, res)
+        // for (let item of res) {
+        //   this.getByCountry(item.location)
+        // }
       })
     },
 
@@ -317,27 +321,34 @@ export default {
       // 歌单数量
       getAllSongList().then(res => {
         this.songListCount = res.length
-        for (let item of res) {
-          this.getByStyle(item.style)
-        }
+        // for (let item of res) {
+        //   this.getByStyle(item.style)
+        // }
       })
     },
-    getByStyle(style) {
-      // 根据歌单风格获取数量
-      for (let item of this.songStyle.rows) {
-        if (style.includes(item['风格'])) {
-          item['总数']++
-        }
-      }
-    },
-    getByCountry(location) {
-      // 根据国籍获取数量
-      for (let item of this.country.rows) {
-        if (location.includes(item['国籍'])) {
-          item['总数']++
+    // getByStyle(style) {
+    //   // 根据歌单风格获取数量
+    //   for (let item of this.songStyle.rows) {
+    //     if (style.includes(item['风格'])) {
+    //       item['总数']++
+    //     }
+    //   }
+    // },
+    getByLocation(location) {
+      for (let item of this.chartData.rows) {
+        if (location.includes(item.name)) {
+          item['用户数']++
         }
       }
     }
+    // getByCountry(location) {
+    //   // 根据国籍获取数量
+    //   for (let item of this.country.rows) {
+    //     if (location.includes(item['国籍'])) {
+    //       item['总数']++
+    //     }
+    //   }
+    // }
   }
 }
 </script>

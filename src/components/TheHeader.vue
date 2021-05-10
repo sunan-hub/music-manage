@@ -2,7 +2,7 @@
   <div class="header">
     <!-- 折叠图片 -->
     <div class="collapse-btn" @click="collapseChange">
-      <i class="el-icon-menu"></i>
+      <i class="el-icon-headset"></i>
     </div>
     <div class="logo">清香音乐 | 后台管理</div>
     <div class="header-right">
