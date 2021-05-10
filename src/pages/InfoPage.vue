@@ -1,12 +1,19 @@
 <template>
   <div>
-    <el-row :gutter="20" class="mgb20">
+    <ve-map
+      class="echarts-map"
+      :data="chartData"
+      height="65vh"
+      width="75vw"
+      :extend="chartExtend"
+    ></ve-map>
+    <el-row :gutter="20" class="mgb20 top100">
       <el-col :span="6">
         <el-card>
           <div class="grid-content">
             <div class="grid-cont-center">
-              <div class="grid-num">{{ consumerCount }}</div>
-              <div>用户总数</div>
+              <div class="grid-num grid-num1">{{ consumerCount }}</div>
+              <div class="grid-num1">用户总数</div>
             </div>
           </div>
         </el-card>
@@ -15,8 +22,8 @@
         <el-card>
           <div class="grid-content">
             <div class="grid-cont-center">
-              <div class="grid-num">{{ songCount }}</div>
-              <div>歌曲总数</div>
+              <div class="grid-num grid-num2">{{ songCount }}</div>
+              <div class="grid-num2">歌曲总数</div>
             </div>
           </div>
         </el-card>
@@ -25,8 +32,8 @@
         <el-card>
           <div class="grid-content">
             <div class="grid-cont-center">
-              <div class="grid-num">{{ singerCount }}</div>
-              <div>歌手数量</div>
+              <div class="grid-num grid-num3">{{ singerCount }}</div>
+              <div class="grid-num3">歌手数量</div>
             </div>
           </div>
         </el-card>
@@ -35,14 +42,14 @@
         <el-card>
           <div class="grid-content">
             <div class="grid-cont-center">
-              <div class="grid-num">{{ songListCount }}</div>
-              <div>歌单数量</div>
+              <div class="grid-num grid-num4">{{ songListCount }}</div>
+              <div class="grid-num4">歌单数量</div>
             </div>
           </div>
         </el-card>
       </el-col>
     </el-row>
-    <el-row :gutter="20" class="mgb20">
+    <!-- <el-row :gutter="20" class="mgb20 top100">
       <el-col :span="12">
         <h3 class="mgb20">用户性别比例</h3>
         <div style="background-color:white">
@@ -56,7 +63,7 @@
         </div>
       </el-col>
     </el-row>
-    <el-row :gutter="20" class="mgb20">
+    <el-row :gutter="20" class="mgb20 top100">
       <el-col :span="12">
         <h3 class="mgb20">歌手性别比例</h3>
         <div style="background-color:white">
@@ -69,7 +76,7 @@
           <ve-histogram :data="country" :theme="options1"></ve-histogram>
         </div>
       </el-col>
-    </el-row>
+    </el-row> -->
   </div>
 </template>
 <script>
@@ -82,6 +89,126 @@ import {
 export default {
   data() {
     return {
+      chartData: {
+        columns: ['name', '用户数'],
+        rows: [
+          { name: '海南', 用户数: 2 },
+          { name: '广东', 用户数: 2 },
+          { name: '广西', 用户数: 2 },
+          { name: '福建', 用户数: 2 },
+          { name: '湖南', 用户数: 2 },
+          { name: '湖北', 用户数: 2 },
+          { name: '湖北', 用户数: 2 },
+          { name: '安徽', 用户数: 2 },
+          { name: '北京', 用户数: 2 },
+          { name: '天津', 用户数: 2 },
+          { name: '河南', 用户数: 2 },
+          { name: '河北', 用户数: 2 },
+          { name: '辽宁', 用户数: 2 },
+          { name: '江西', 用户数: 2 },
+          { name: '浙江', 用户数: 2 },
+          { name: '山东', 用户数: 2 },
+          { name: '黑龙江', 用户数: 2 },
+          { name: '西藏', 用户数: 2 },
+          { name: '四川', 用户数: 2 },
+          { name: '重庆', 用户数: 2 },
+          { name: '上海', 用户数: 2 },
+          { name: '江苏', 用户数: 2 },
+          { name: '贵州', 用户数: 2 },
+          { name: '云南', 用户数: 2 },
+          { name: '台湾', 用户数: 0 },
+          { name: '山西', 用户数: 2 },
+          { name: '陕西', 用户数: 2 },
+          { name: '青海', 用户数: 2 },
+          { name: '甘肃', 用户数: 2 },
+          { name: '吉林', 用户数: 2 },
+          { name: '陕西', 用户数: 2 },
+          { name: '内蒙古', 用户数: 2 },
+          { name: '新疆', 用户数: 20 },
+          { name: '宁夏', 用户数: 2 },
+          { name: '澳门', 用户数: 2 },
+          { name: '香港', 用户数: 2 },
+          { name: '南海诸岛', 用户数: 20 }
+        ]
+      },
+      // chartSettings: {
+      //   position: 'china',
+      //   metrics: ['用户数'],
+      //   itemStyle: {
+      //     normal: {
+      //       borderColor: '#72F2FF',
+      //       areaColor: '#7F8FA3',
+      //       borderWidth: 2,
+      //       shadowBlur: 1
+      //     },
+      //     emphasis: {
+      //       borderColor: '#72F2FF',
+      //       areaColor: '#19355A',
+      //       borderWidth: 1,
+      //       shadowBlur: 1
+      //     }
+      //   },
+      //   label: {
+      //     normal: {
+      //       show: true,
+      //       formatter: function(params) {
+      //         if (params.value) {
+      //           return params.name + ' ' + params.value // 地图上展示文字 + 数值
+      //         } else {
+      //           return ''
+      //         }
+      //       },
+      //       color: '#fff',
+      //       backgroundColor: 'rgba(0, 15, 42, 0.3)',
+      //       fontSize: 12,
+      //       align: 'right',
+      //       verticalAlign: 'top',
+      //       lineHeight: 12,
+      //       padding: 4,
+      //       borderRadius: 4
+      //     },
+      //     emphasis: {
+      //       show: true,
+      //       formatter: function(params) {
+      //         console.log(params)
+      //         if (params.value) {
+      //           return params.name + ' ' + params.value // 地图上展示文字 + 数值
+      //         } else {
+      //           return ''
+      //         }
+      //       },
+      //       color: '#44F0FF'
+      //     }
+      //   },
+      //   zoom: 1,
+      //   selectData: true,
+      //   scaleLimit: {
+      //     min: 1,
+      //     max: 2
+      //   },
+      //   roam: true
+      // },
+      chartExtend: {
+        legend: {
+          show: false
+        },
+        visualMap: [
+          {
+            type: 'continuous',
+            left: 'left',
+            top: 'bottom',
+            calculable: true,
+            text: ['高', '低'],
+            inRange: {
+              color: ['#87cefa', '#004C6D', '#29355A']
+            },
+            textStyle: {
+              color: '#fff'
+            }
+          }
+        ]
+      },
+      // ------------------------------------------------------------
       consumerCount: 0, // 用户总数
       songCount: 0, // 歌曲总数
       singerCount: 0, // 歌手数量
@@ -216,6 +343,9 @@ export default {
 </script>
 
 <style scoped>
+.top100 {
+  top: 80px;
+}
 .grid-content {
   display: flex;
   align-items: center;
@@ -228,9 +358,27 @@ export default {
   font-size: 14px;
   color: darkgray;
 }
-
+.el-card {
+  background-color: rgb(216, 253, 240);
+}
 .grid-num {
   font-size: 30px;
   font-weight: bold;
+}
+.echarts-map {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.grid-num1 {
+  color: rgb(23, 216, 23);
+}
+.grid-num2 {
+  color: rgb(0, 128, 0);
+}
+.grid-num3 {
+  color: rgb(142, 216, 23);
+}
+.grid-num4 {
+  color: rgb(23, 216, 152);
 }
 </style>

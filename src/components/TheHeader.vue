@@ -4,7 +4,7 @@
     <div class="collapse-btn" @click="collapseChange">
       <i class="el-icon-menu"></i>
     </div>
-    <div class="logo">music后台管理</div>
+    <div class="logo">清香音乐 | 后台管理</div>
     <div class="header-right">
       <!-- <div class="btn-fullscreen" @click="handleFullScreen">
         <el-tooltip
@@ -95,7 +95,7 @@ export default {
 <style scoped>
 .header {
   position: relative;
-  background-color: #253041;
+  background-color: #058a41;
   box-sizing: border-box;
   width: 100%;
   height: 70px;

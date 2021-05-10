@@ -1,6 +1,6 @@
 <template>
   <div class="login-wrap">
-    <div class="ms-title">音乐网站后台</div>
+    <div class="ms-title">清香音乐网站后台</div>
     <div class="ms-login">
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
         <el-form-item prop="username">
@@ -89,7 +89,7 @@ export default {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  color: rgb(14, 199, 112);
+  color: rgb(255, 255, 255);
 }
 .ms-login {
   position: absolute;

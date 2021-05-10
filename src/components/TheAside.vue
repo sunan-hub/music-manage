@@ -4,9 +4,9 @@
       class="sidebar-el-menu"
       :default-active="onRoutes"
       :collapse="collapse"
-      background-color="#334256"
-      text-color="#ffffff"
-      active-text-color="#20a0ff"
+      background-color="#0d7204"
+      text-color="#68bda3"
+      active-text-color="#00ff37"
       router
     >
       <template v-for="item in items">
@@ -29,17 +29,17 @@ export default {
       collapse: false,
       items: [
         {
-          icon: 'el-icon-document',
+          icon: 'el-icon-s-data',
           index: 'Info',
           title: '系统首页'
         },
         {
-          icon: 'el-icon-document',
+          icon: 'el-icon-user-solid',
           index: 'Consumer',
           title: '用户管理'
         },
         {
-          icon: 'el-icon-document',
+          icon: 'el-icon-service',
           index: 'Singer',
           title: '歌手管理'
         },
@@ -72,7 +72,7 @@ export default {
   left: 0;
   top: 70px;
   bottom: 0;
-  background-color: #334256;
+  background-color: #0d7204;
   overflow-y: scroll;
 }
 
@@ -86,5 +86,8 @@ export default {
 
 .sidebar > ul {
   height: 100%;
+}
+i {
+  color: #68bda3;
 }
 </style>

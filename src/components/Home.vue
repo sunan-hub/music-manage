@@ -2,7 +2,7 @@
   <div>
     <the-header></the-header>
     <the-aside></the-aside>
-    <div class="content-box" :class="{ 'content-collapse': collapse }">
+    <div style="background-color: #078578" class="content-box" :class="{ 'content-collapse': collapse }">
       <router-view></router-view>
     </div>
   </div>
