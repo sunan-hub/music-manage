@@ -6,17 +6,17 @@
     </div>
     <div class="logo">music后台管理</div>
     <div class="header-right">
-      <div class="btn-fullscreen" @click="handleFullScreen">
+      <!-- <div class="btn-fullscreen" @click="handleFullScreen">
         <el-tooltip
           :content="fullscreen ? `取消全屏` : `全屏`"
           placement="bottom"
         >
           <i class="el-icon-rank"></i>
         </el-tooltip>
-      </div>
-      <div class="user-avator">
+      </div> -->
+      <!-- <div class="user-avator">
         <img src="../assets/img/user.jpg" />
-      </div>
+      </div> -->
       <el-dropdown class="user-name" trigger="click" @command="handleCommand">
         <span class="el-dropdown-link">
           {{ userName }}
@@ -51,37 +51,37 @@ export default {
       bus.$emit('collapse', this.collapse)
     },
     // 全屏事件
-    handleFullScreen() {
-      if (this.fullscreen) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen()
-        } else if (document.webkitCancelFullScreen) {
-          // safari 、Chrome
-          document.webkitCancelFullScreen()
-        } else if (document.mozCancelFullScreen) {
-          // firefox
-          document.mozCancelFullScreen()
-        } else if (document.msExitFullScreen) {
-          // ie
-          document.msExitFullScreen()
-        }
-      } else {
-        let element = document.documentElement
-        if (element.requestFullscreen) {
-          element.requestFullscreen()
-        } else if (element.webkitRequestFullScreen) {
-          // safari 、Chrome
-          element.webkitRequestFullScreen()
-        } else if (element.mozRequestFullScreen) {
-          // firefox
-          element.mozRequestFullScreen()
-        } else if (element.msRequestFullScreen) {
-          // ie
-          element.msRequestFullScreen()
-        }
-      }
-      this.fullscreen = !this.fullscreen
-    },
+    // handleFullScreen() {
+    //   if (this.fullscreen) {
+    //     if (document.exitFullscreen) {
+    //       document.exitFullscreen()
+    //     } else if (document.webkitCancelFullScreen) {
+    //       // safari 、Chrome
+    //       document.webkitCancelFullScreen()
+    //     } else if (document.mozCancelFullScreen) {
+    //       // firefox
+    //       document.mozCancelFullScreen()
+    //     } else if (document.msExitFullScreen) {
+    //       // ie
+    //       document.msExitFullScreen()
+    //     }
+    //   } else {
+    //     let element = document.documentElement
+    //     if (element.requestFullscreen) {
+    //       element.requestFullscreen()
+    //     } else if (element.webkitRequestFullScreen) {
+    //       // safari 、Chrome
+    //       element.webkitRequestFullScreen()
+    //     } else if (element.mozRequestFullScreen) {
+    //       // firefox
+    //       element.mozRequestFullScreen()
+    //     } else if (element.msRequestFullScreen) {
+    //       // ie
+    //       element.msRequestFullScreen()
+    //     }
+    //   }
+    //   this.fullscreen = !this.fullscreen
+    // },
     handleCommand(command) {
       if (command === 'logout') {
         localStorage.removeItem('userName')

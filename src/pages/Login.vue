@@ -1,6 +1,6 @@
 <template>
   <div class="login-wrap">
-    <div class="ms-title">music 后台管理登录</div>
+    <div class="ms-title">音乐网站后台</div>
     <div class="ms-login">
       <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
         <el-form-item prop="username">
@@ -14,7 +14,8 @@
           ></el-input>
         </el-form-item>
         <div class="login-btn">
-          <el-button type="primary" @click="submitForm">登录</el-button>
+          <el-button type="success" @click="submitForm" >登录</el-button>
+          <el-button type="info" @click="reset">清除</el-button>
         </div>
       </el-form>
     </div>
@@ -50,15 +51,21 @@ export default {
           if (res.code === 1) {
             localStorage.setItem('userName', this.ruleForm.username)
             this.$router.push('/Info')
-            this.notify('登录成功', 'success')
+            this.$message({
+              message: '登录成功',
+              type: 'success'
+            })
           } else {
-            this.notify('密码错误', 'error')
+            this.$message.error('账号或密码错误', 'error')
           }
         })
         .catch(res => {
           console.log(res)
-          this.notify('登录失败', 'error')
+          this.$message.error('登录失败', 'error')
         })
+    },
+    reset() {
+      this.$refs.ruleForm.resetFields()
     }
   }
 }
@@ -82,19 +89,19 @@ export default {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
-  color: #fff;
+  color: rgb(14, 199, 112);
 }
 .ms-login {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 300px;
-  height: 160px;
-  margin-left: -190px;
-  margin-top: -150px;
+  width: 50%;
+  max-width: 500px;
+  height: 20%;
   padding: 40px;
   border-radius: 5px;
-  background: #fff;
+  transform: translate(-50%, -50%);
+  background: rgba(17, 88, 70, 0.3);
 }
 .login-btn {
   text-align: center;
@@ -102,5 +109,10 @@ export default {
 .login-btn button {
   width: 100%;
   height: 36px;
+}
+.login-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 </style>
