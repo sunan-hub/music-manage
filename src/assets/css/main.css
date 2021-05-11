@@ -22,7 +22,7 @@ a {
 
 .content-box {
   position: absolute;
-  left: 150px;
+  left: 0px;
   right: 0;
   top: 70px;
   bottom: 0;
@@ -63,12 +63,12 @@ a {
 }
 
 .el-table__body tr:hover > td,.el-table .el-table__header:hover .has-gutter .is-leaf {
-  background-color: green !important;
+  background-color: rgba(0, 128, 0, 0.8) !important;
   color: #fff;
 }
 
 .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-  background-color:  green;;
+  background-color:  rgba(0, 128, 0, 0.7);
   border-color: teal;
 }
 

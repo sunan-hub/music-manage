@@ -71,7 +71,7 @@
       </el-table-column>
       <el-table-column label="评论" width="80" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" @click="getComment(data[scope.$index].id)"
+          <el-button size="mini" type="success" plain @click="getComment(data[scope.$index].id)"
             >评论</el-button
           >
         </template>

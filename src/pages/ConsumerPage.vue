@@ -451,9 +451,9 @@ export default {
               if (res.code === 1) {
                 this.getData()
                 this.$message({
-              message: '修改成功',
-              type: 'success'
-            })
+                  message: '修改成功',
+                  type: 'success'
+                })
               } else {
                 this.$message.error('修改失败')
               }
