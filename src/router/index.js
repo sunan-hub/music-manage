@@ -39,12 +39,12 @@ export default new Router({
           component: resolve => require(['../pages/ListSongPage.vue'], resolve)
         },
         {
-          path: '/Collect',
-          component: resolve => require(['../pages/CollectPage.vue'], resolve)
+          path: '/Shoucang',
+          component: resolve => require(['../pages/ShoucangPage.vue'], resolve)
         },
         {
-          path: '/Comment',
-          component: resolve => require(['../pages/CommentPage.vue'], resolve)
+          path: '/Pinglun',
+          component: resolve => require(['../pages/PinglunPage.vue'], resolve)
         }
       ]
     }

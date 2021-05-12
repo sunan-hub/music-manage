@@ -71,7 +71,7 @@
       </el-table-column>
       <el-table-column label="评论" width="80" align="center">
         <template slot-scope="scope">
-          <el-button size="mini" type="success" plain @click="getComment(data[scope.$index].id)"
+          <el-button size="mini" type="success" plain @click="getPinglun(data[scope.$index].id)"
             >评论</el-button
           >
         </template>
@@ -328,8 +328,8 @@ export default {
       this.$router.push({ path: `/ListSong`, query: { id } })
     },
     // 转向该歌单的评论列表
-    getComment(id) {
-      this.$router.push({ path: '/comment', query: { id } })
+    getPinglun(id) {
+      this.$router.push({ path: '/pinglun', query: { id } })
     }
   }
 }

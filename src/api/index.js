@@ -62,15 +62,15 @@ export const getUserOfId = id => get(`/consumer/selectByPrimaryKey?id=${id}`)
 
 // ===============收藏===================
 // 指定用户的收藏列表
-export const getCollectOfUserId = userId =>
-  get(`/collect/collectOfUserId?userId=${userId}`)
+export const getShoucangOfUserId = userId =>
+  get(`/shoucang/shoucangOfUserId?userId=${userId}`)
 // 删除用户收藏的歌曲
-export const deleteCollection = (userId, songId) =>
-  get(`collect/delete?userId=${userId}&songId=${songId}`)
+export const deleteShoucangion = (userId, songId) =>
+  get(`shoucang/delete?userId=${userId}&songId=${songId}`)
 
 // ===============评论===================
 // 指定歌单的评论列表
-export const getCommentOfSongListId = songListId =>
-  get(`/comment/commentOfSongListId?songListId=${songListId}`)
+export const getPinglunOfSongListId = songListId =>
+  get(`/pinglun/pinglunOfSongListId?songListId=${songListId}`)
 // 删除评论
-export const deleteComment = id => get(`comment/delete?id=${id}`)
+export const deletePinglun = id => get(`pinglun/delete?id=${id}`)

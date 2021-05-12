@@ -82,17 +82,17 @@
         width="100"
         align="center"
       ></el-table-column>
-      <el-table-column label="收藏" width="120" align="center">
+      <!-- <el-table-column label="收藏" width="120" align="center">
         <template slot-scope="scope">
           <el-button
             type="success"
             plain
             size="mini"
-            @click="getCollect(data[scope.$index].id)"
+            @click="getShoucang(data[scope.$index].id)"
             >收藏歌单管理</el-button
           >
         </template>
-      </el-table-column>
+      </el-table-column> -->
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
           <el-button
@@ -489,8 +489,8 @@ export default {
       this.delVisible = false
     },
     // 转向该用户的收藏列表
-    getCollect(id) {
-      this.$router.push({ path: '/collect', query: { id } })
+    getShoucang(id) {
+      this.$router.push({ path: '/shoucang', query: { id } })
     }
   }
 }

@@ -54,8 +54,8 @@
 import { mixin } from '../mixins/index'
 import {
   songOfSongId,
-  getCollectOfUserId,
-  deleteCollection
+  getShoucangOfUserId,
+  deleteShoucangion
 } from '../api/index'
 
 export default {
@@ -94,7 +94,7 @@ export default {
     getData() {
       this.tempData = []
       this.tableData = []
-      getCollectOfUserId(this.$route.query.id).then(res => {
+      getShoucangOfUserId(this.$route.query.id).then(res => {
         for (let item of res) {
           this.getSong(item.songId)
         }
@@ -113,7 +113,7 @@ export default {
     },
     // 删除一条歌曲
     deleteRow() {
-      deleteCollection(this.$route.query.id, this.idx.id)
+      deleteShoucangion(this.$route.query.id, this.idx.id)
         .then(res => {
           if (res) {
             this.getData()

@@ -1,6 +1,6 @@
 <template>
   <div class="table">
-    <div class="crumbs"><i class="el-icon-tickets"></i>评论信息</div>
+    <!-- <div class="crumbs"><i class="el-icon-tickets"></i>评论信息</div> -->
     <div class="container">
       <div class="handle-box">
         <el-button type="primary" size="mini" @click="delAll"
@@ -57,8 +57,8 @@
 import { mixin } from '../mixins/index'
 import {
   getUserOfId,
-  getCommentOfSongListId,
-  deleteComment
+  getPinglunOfSongListId,
+  deletePinglun
 } from '../api/index'
 
 export default {
@@ -97,7 +97,7 @@ export default {
     getData() {
       this.tempData = []
       this.tableData = []
-      getCommentOfSongListId(this.$route.query.id).then(res => {
+      getPinglunOfSongListId(this.$route.query.id).then(res => {
         for (let item of res) {
           this.getUsers(item.userId, item)
         }
@@ -118,7 +118,7 @@ export default {
     },
     // 删除一条评论
     deleteRow() {
-      deleteComment(this.idx.id)
+      deletePinglun(this.idx.id)
         .then(res => {
           if (res) {
             this.getData()
