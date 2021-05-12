@@ -12,7 +12,7 @@
         <el-card>
           <div class="grid-content">
             <div class="grid-cont-center">
-              <div class="grid-num grid-num1">{{ consumerCount }}</div>
+              <div class="grid-num grid-num1">{{ usersCount }}</div>
               <div class="grid-num1">用户总数</div>
             </div>
           </div>
@@ -53,7 +53,7 @@
       <el-col :span="12">
         <h3 class="mgb20">用户性别比例</h3>
         <div style="background-color:white">
-          <ve-pie :data="consumerSex" :theme="options"></ve-pie>
+          <ve-pie :data="usersSex" :theme="options"></ve-pie>
         </div>
       </el-col>
       <el-col :span="12">
@@ -81,7 +81,7 @@
 </template>
 <script>
 import {
-  getAllConsumer,
+  getAllUsers,
   allSong,
   getAllSinger,
   getAllSongList
@@ -209,12 +209,12 @@ export default {
         ]
       },
       // ------------------------------------------------------------
-      consumerCount: 0, // 用户总数
+      usersCount: 0, // 用户总数
       songCount: 0, // 歌曲总数
       singerCount: 0, // 歌手数量
       songListCount: 0, // 歌单数量
-      consumer: [] // 所有用户
-      // consumerSex: {
+      users: [] // 所有用户
+      // usersSex: {
       //   // 按性别分类的用户数
       //   columns: ['性别', '总数'],
       //   rows: [
@@ -272,19 +272,19 @@ export default {
     this.getSong()
     this.getSinger()
     this.getSongList()
-    this.getConsumer()
+    this.getUsers()
   },
   methods: {
-    getConsumer() {
+    getUsers() {
       // 用户总数
-      getAllConsumer().then(res => {
-        this.consumer = res
-        this.consumerCount = res.length
+      getAllUsers().then(res => {
+        this.users = res
+        this.usersCount = res.length
         for (let item of res) {
           this.getByLocation(item.location)
         }
-        // this.consumerSex.rows[0]['总数'] = this.setSex(1, this.consumer)
-        // this.consumerSex.rows[1]['总数'] = this.setSex(0, this.consumer)
+        // this.usersSex.rows[0]['总数'] = this.setSex(1, this.users)
+        // this.usersSex.rows[1]['总数'] = this.setSex(0, this.users)
       })
     },
     // setSex(sex, val) {

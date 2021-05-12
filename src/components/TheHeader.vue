@@ -55,7 +55,7 @@ export default {
         },
         {
           icon: 'el-icon-user-solid',
-          index: 'Consumer',
+          index: 'Users',
           title: '用户管理'
         },
         {

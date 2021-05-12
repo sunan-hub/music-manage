@@ -31,7 +31,7 @@
       <el-table-column type="selection" width="40"></el-table-column>
       <el-table-column label="用户图片" width="110" align="center">
         <template slot-scope="scope">
-          <div class="consumer-img">
+          <div class="users-img">
             <img :src="getUrl(scope.row.avator)" style="width:100%" />
           </div>
           <el-upload
@@ -200,7 +200,7 @@
         <el-button size="mini" @click="centerDialogVisible = false"
           >取消</el-button
         >
-        <el-button size="mini" @click="addConsumer">确定</el-button>
+        <el-button size="mini" @click="addUsers">确定</el-button>
       </span>
     </el-dialog>
 
@@ -269,10 +269,10 @@
 
 <script>
 import {
-  getAllConsumer,
-  setConsumer,
-  updateConsumer,
-  delConsumer
+  getAllUsers,
+  setUsers,
+  updateUsers,
+  delUsers
 } from '../api/index'
 import { mixin } from '../mixins/index'
 export default {
@@ -371,14 +371,14 @@ export default {
     getData() {
       this.tempData = []
       this.tableData = []
-      getAllConsumer().then(res => {
+      getAllUsers().then(res => {
         this.tempData = res
         this.tableData = res
         this.currentPage = 1
       })
     },
     // 添加用户
-    addConsumer() {
+    addUsers() {
       this.$refs['registerForm'].validate(valid => {
         if (valid) {
           let d = this.registerForm.birth
@@ -394,7 +394,7 @@ export default {
           params.append('introduction', this.registerForm.introduction)
           params.append('location', this.registerForm.location)
           params.append('avator', '/img/user.jpg')
-          setConsumer(params)
+          setUsers(params)
             .then(res => {
               if (res.code === 1) {
                 this.getData()
@@ -446,7 +446,7 @@ export default {
           params.append('introduction', this.form.introduction)
           params.append('location', this.form.location)
 
-          updateConsumer(params)
+          updateUsers(params)
             .then(res => {
               if (res.code === 1) {
                 this.getData()
@@ -467,11 +467,11 @@ export default {
     },
     // 更新图片
     uploadUrl(id) {
-      return `${this.$store.state.HOST}/consumer/updateConsumerPic?id=${id}`
+      return `${this.$store.state.HOST}/users/updateUsersPic?id=${id}`
     },
     // 删除一名用户
     deleteRow() {
-      delConsumer(this.idx)
+      delUsers(this.idx)
         .then(res => {
           if (res) {
             this.getData()
@@ -500,7 +500,7 @@ export default {
 .handle-box {
   margin-bottom: 20px;
 }
-.consumer-img {
+.users-img {
   width: 100%;
   height: 80px;
   border-radius: 5px;

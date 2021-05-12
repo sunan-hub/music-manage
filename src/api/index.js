@@ -50,15 +50,15 @@ export const delListSong = (songId, songListId) =>
 
 // ============用户相关================
 // 查询用户
-export const getAllConsumer = () => get(`consumer/allConsumer`)
+export const getAllUsers = () => get(`users/allUsers`)
 // 添加用户
-export const setConsumer = params => post(`consumer/add`, params)
+export const setUsers = params => post(`users/add`, params)
 // 编辑用户
-export const updateConsumer = params => post(`consumer/update`, params)
+export const updateUsers = params => post(`users/update`, params)
 // 删除用户
-export const delConsumer = id => get(`consumer/delete?id=${id}`)
+export const delUsers = id => get(`users/delete?id=${id}`)
 // 根据用户id查询该用户的详细信息
-export const getUserOfId = id => get(`/consumer/selectByPrimaryKey?id=${id}`)
+export const getUserOfId = id => get(`/users/selectByPrimaryKey?id=${id}`)
 
 // ===============收藏===================
 // 指定用户的收藏列表

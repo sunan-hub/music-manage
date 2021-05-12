@@ -19,8 +19,8 @@ export default new Router({
           component: resolve => require(['../pages/InfoPage.vue'], resolve)
         },
         {
-          path: '/Consumer',
-          component: resolve => require(['../pages/ConsumerPage.vue'], resolve)
+          path: '/Users',
+          component: resolve => require(['../pages/UsersPage.vue'], resolve)
         },
         {
           path: '/Singer',
