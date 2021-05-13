@@ -104,7 +104,7 @@
       width="400px"
       center
     >
-      <el-form :model="registerForm" ref="registerForm" label-width="80px">
+      <el-form :model="registerForm" :rules="rules" ref="registerForm" label-width="80px">
         <el-form-item prop="name" label="歌手名" size="mini">
           <el-input v-model="registerForm.name" placeholder="歌手名"></el-input>
         </el-form-item>
@@ -152,7 +152,7 @@
       width="400px"
       center
     >
-      <el-form :model="form" ref="form" label-width="80px">
+      <el-form :model="form" ref="form" :rules="rules" label-width="80px">
         <el-form-item prop="name" label="歌手名" size="mini">
           <el-input v-model="form.name" placeholder="歌手名"></el-input>
         </el-form-item>
@@ -232,6 +232,9 @@ export default {
       pageSize: 5, // 分页每页大小
       currentPage: 1, // 当前页
       idx: -1, //  当前选择项
+      rules: {
+        // birth: [{ required: true, message: '请选择生日', trigger: 'blur' }]
+      }, // 校验规则
       multipleSelection: [] // 哪些项已经打勾
     }
   },
@@ -279,9 +282,10 @@ export default {
     },
     // 添加歌手
     addSinger() {
-      let d = this.registerForm.birth
-      let datetime =
-        d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+      if (this.registerForm.birth) {
+        let d = this.registerForm.birth
+        var datetime = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+      }
       let params = new URLSearchParams()
       params.append('name', this.registerForm.name)
       params.append('sex', this.registerForm.sex)

@@ -123,6 +123,19 @@ a {
 .table{
   min-width: 800px;
 }
+.el-dialog {
+  background-color: rgba(14, 170, 0, 0.9);
+  border-radius: 10px;
+}
+.el-dialog .el-dialog__header .el-dialog__title, .el-dialog .el-dialog__header .el-dialog__title {
+  color: rgb(0, 255, 13);
+}
+.el-dialog__body .el-form-item__label {
+  color: rgb(0, 255, 13);
+}
+.el-dialog__body div {
+  color: rgb(0, 255, 13);
+}
 .el-dialog__body {
   padding: 10px  20px 0px 10px;
 }

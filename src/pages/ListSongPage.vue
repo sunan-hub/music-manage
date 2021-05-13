@@ -1,9 +1,9 @@
 <template>
   <div class="table">
-    <div class="crumbs"><i class="el-icon-tickets"></i>歌单</div>
+    <!-- <div class="crumbs"><i class="el-icon-tickets"></i>歌单</div> -->
     <div class="container">
       <div class="handle-box">
-        <el-button type="primary" size="mini" @click="delAll"
+        <el-button type="success" plain size="mini" @click="delAll"
           >批量删除</el-button
         >
         <el-input
@@ -13,7 +13,7 @@
           class="handle-input"
         ></el-input>
         <el-button
-          type="primary"
+          type="success"
           size="mini"
           @click="centerDialogVisible = true"
           >添加歌曲</el-button
@@ -71,6 +71,16 @@
             placeholder="歌曲名字"
           ></el-input>
         </el-form-item>
+        <!-- <el-upload
+          class="upload-demo"
+          accept="mp3"
+          action="http://localhost:8888/song"
+          :show-file-list="false"
+          :on-success="handleAvatorSuccess"
+          :before-upload="beforeAvatorUpload">
+          <el-button size="small" type="primary">点击上传</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传mp3文件，且不超过10MB</div>
+        </el-upload> -->
       </el-form>
       <span slot="footer">
         <el-button size="mini" @click="centerDialogVisible = false"
@@ -210,7 +220,46 @@ export default {
           console.log(err)
         })
       this.delVisible = false
-    }
+    },
+    // //上传成功
+    // handleAvatorSuccess(res, file) {
+    //   if (res.code == 1) {
+    //     this.$store.commit("setAvator", res.avator);
+    //     this.$message({
+    //       showClose: true,
+    //       message: '上传成功'
+    //     })
+    //   } else {
+    //     this.$message({
+    //       showClose: true,
+    //       message: '上传失败',
+    //       type: 'error'
+    //     })
+    //   }
+    // },
+    // //上传之前的校验
+    // beforeAvatorUpload(file) {
+    //   console.log(file)
+    //   const isJPG = file.type == "audio/mpeg";
+    //   const isLt10M = file.size / 1024 / 1024 < 10;
+    //   if (!isJPG) {
+    //     this.$message({
+    //       showClose: true,
+    //       message: '上传音乐只能是mp3格式',
+    //       type: 'warning'
+    //     })
+    //     return false;
+    //   }
+    //   if (!isLt10M) {
+    //     this.$message({
+    //       showClose: true,
+    //       message: '上传音乐文件不能大于10MB',
+    //       type: 'warning'
+    //     })
+    //     return false;
+    //   }
+    //   return true;
+    // }
   }
 }
 </script>

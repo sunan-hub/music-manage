@@ -136,17 +136,30 @@
         action=""
         id="tf"
       >
+        <!-- <el-form-item prop="name" label="歌名" size="mini">
+          <el-input v-model="registerForm.name" placeholder="歌名"></el-input>
+        </el-form-item> -->
         <div>
           <label>歌名</label>
-          <el-input type="text" name="name"></el-input>
+          <el-input v-model="registerForm.name" type="text" name="name"></el-input>
         </div>
+        <!-- <el-form-item prop="introduction" label="专辑" size="mini">
+          <el-input v-model="registerForm.introduction" placeholder="专辑"></el-input>
+        </el-form-item> -->
         <div>
           <label>专辑</label>
-          <el-input type="text" name="introduction"></el-input>
+          <el-input v-model="registerForm.introduction" type="text" name="introduction"></el-input>
         </div>
+        <!-- <el-form-item prop="lyric" label="歌词" size="mini">
+          <el-input
+            v-model="registerForm.lyric"
+            placeholder="歌词"
+            type="textarea"
+          ></el-input>
+        </el-form-item> -->
         <div>
           <label>歌词</label>
-          <el-input type="textarea" name="lyric"></el-input>
+          <el-input v-model="registerForm.lyric" type="textarea" name="lyric"></el-input>
         </div>
         <div>
           <label>歌曲上传</label>
@@ -285,7 +298,7 @@ export default {
         this.currentPage = 1
       })
     },
-    // 添加歌手
+    // 添加歌曲
     addSong() {
       let _this = this
       var form = new FormData(document.getElementById('tf'))
@@ -303,12 +316,12 @@ export default {
           if (res.code) {
             _this.getData()
             _this.registerForm = {}
-            this.$message({
+            _this.$message({
               message: res.msg,
               type: 'success'
             })
           } else {
-            this.$message.error('保存失败')
+            _this.$message.error('保存失败')
           }
         }
       }
@@ -454,6 +467,9 @@ export default {
 }
 .handle-box {
   margin-bottom: 20px;
+}
+label {
+  color: rgb(0, 255, 13);
 }
 .singer-img {
   width: 100%;
